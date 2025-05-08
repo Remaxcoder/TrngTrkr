@@ -1,0 +1,108 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  background: #e0f0ff;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  flex: 1;
+  margin: 0 4px;
+}
+
+.stat-box strong {
+  color: #003366;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-box span {
+  color: #005bb5;
+  font-size: 14px;
+}
+
+.circle-progress {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 20px;
+  color: black;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #F4631E;
+}
+
+.circle-text .big {
+  font-size: 24px;
+  color: rgb(255, 123, 0);
+  font-weight: bold;
+}
+
+.circle-text .small {
+  font-size: 14px;
+  color: #666;
+}
+
+.chart-grid {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.chart-box {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.chart-box p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.main-btn {
+  display: block;
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#circleChart {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+
