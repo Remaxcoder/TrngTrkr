@@ -70,3 +70,4 @@ new Chart(document.getElementById('cmMonth'), {
   },
   options: { plugins: { legend: { display: false } } }
 });
+
