@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fitness Tracker Home</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 </head>
 <body>
   <div class="container">
@@ -19,7 +21,7 @@
 
     <!-- Cirkel fremgang -->
     <div class="circle-progress">
-      <canvas id="circleChart" width="250" height="250"></canvas>
+      <canvas id="circleChart"></canvas>
       <div class="circle-text">
         <div class="big">+0,9 cm</div>
         <div class="small">Denne måned</div>
@@ -32,21 +34,20 @@
         <p>kg (uge)</p>
         <canvas id="kgWeek"></canvas>
       </div>
-      <div class="chart-boxy">
-        <p>kg (måned)</p>
-        <canvas id="kgMonth"></canvas>
-      </div>
-    </div>
-    <div class="chart-griddy">
       <div class="chart-box">
         <p>cm (uge)</p>
         <canvas id="cmWeek"></canvas>
       </div>
-        <div class="chart-box">
-          <p>cm (måned)</p>
-          <canvas id="cmMonth"></canvas>
-        </div>
+      <div class="chart-box">
+        <p>kg (måned)</p>
+        <canvas id="kgMonth"></canvas>
+      </div>
+      <div class="chart-box">
+        <p>cm (måned)</p>
+        <canvas id="cmMonth"></canvas>
+      </div>
     </div>
+
 
     <!-- Knap -->
     <button class="main-btn">Begynd denne uges</button>
