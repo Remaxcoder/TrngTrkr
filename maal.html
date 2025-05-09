@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dine mål</title>
+  <link rel="stylesheet" href="maal.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Dine Mål</h1>
+      <div class="menu-icon" id="burgerMenu">
+        <div class="menu-circle">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="card-container" id="maalContainer">
+        <!-- Content will be loaded dynamically -->
+      </div>
+      
+      <div class="action-buttons">
+        <button onclick="location.href='questionnaire.html'" class="main-btn">
+          <span class="icon">✏️</span>
+          <span>Rediger dine svar</span>
+        </button>
+      </div>
+    </div>
+  <button class="needed-btn">Begynd denne uges</button>
+    <!-- Side menu -->
+    <div class="side-menu" id="sideMenu">
+      <div class="menu-header">
+        <div class="profile-avatar">
+          <div class="avatar-circle"></div>
+        </div>
+        <div class="profile-name">Trænings Profil</div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html"><span class="icon">🏠</span>Hjem</a></li>
+          <li class="active"><a href="maal.html"><span class="icon">🎯</span>Mål</a></li>
+          <li><a href="#"><span class="icon">📊</span>Statistik</a></li>
+          <li><a href="#"><span class="icon">ℹ️</span>Om</a></li>
+          <li><a href="#"><span class="icon">⚙️</span>Indstillinger</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
+  </div>
+
+  <script src="maal.js"></script>
+</body>
+</html>
