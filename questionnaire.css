@@ -1,0 +1,289 @@
+/* Questionnaire specific styles that complement the main style.css */
+
+.page-title {
+  text-align: center;
+  color: #fff;
+  margin: 30px 0 20px;
+  font-size: 24px;
+  font-weight: 500;
+  padding-top: 80px;
+}
+
+/* Progress bar styles */
+.progress-container {
+  background: rgba(255, 255, 255, 0.08);
+  height: 10px;
+  border-radius: 20px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #FF7B00, #F4631E);
+  height: 100%;
+  border-radius: 20px;
+  width: 16.67%; /* 1/6 for first section */
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* Form section styles */
+.form-section {
+  display: none;
+  margin: 20px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.form-section.active {
+  display: block;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-section h2 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.form-section h3 {
+  color: #ddd;
+  font-size: 18px;
+  margin: 25px 0 15px;
+  font-weight: 500;
+}
+
+.form-description {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Form groups and inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #ddd;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px 15px;
+  width: 100%;
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: rgba(255, 123, 0, 0.5);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 123, 0, 0.2);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  padding-right: 40px;
+}
+
+/* Exercise input styles */
+.exercise-input .exercise-values {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.exercise-input .form-input {
+  flex: 1;
+}
+
+.exercise-input .separator {
+  color: #ddd;
+  font-size: 18px;
+  margin: 0 5px;
+}
+
+/* Radio button styles */
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.radio-option {
+  position: relative;
+  flex: 1;
+  min-width: 100px;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-option label {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option input[type="radio"]:checked + label {
+  background: rgba(255, 123, 0, 0.2);
+  border-color: rgba(255, 123, 0, 0.5);
+  color: #fff;
+}
+
+/* Slider styles */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.slider-container span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.form-slider {
+  flex: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+}
+
+.form-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF7B00;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #FF7B00;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+/* Navigation buttons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px 100px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.nav-btn:active {
+  transform: translateY(1px);
+}
+
+#prevBtn {
+  visibility: hidden;
+}
+
+.submit-btn {
+  display: none;
+  background: linear-gradient(135deg, #FF7B00, #F4631E);
+  border: none;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #F4631E, #FF7B00);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .radio-group {
+    flex-direction: column;
+  }
+  
+  .radio-option {
+    width: 100%;
+  }
+  
+  .exercise-input .exercise-values {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .exercise-input .separator {
+    align-self: center;
+    margin: 5px 0;
+  }
+  
+  .form-navigation {
+    padding-bottom: 100px;
+  }
+}

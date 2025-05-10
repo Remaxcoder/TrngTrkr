@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Fitness Tracker Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#000000">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
+<body class="dark">
+
+  <div class="container">
+
+    <!-- Stats kort -->
+    <div class="stats-row">
+      <div class="stat-box"><strong>Bench</strong><br/><span>+15 %</span></div>
+      <div class="stat-box"><strong>Curl</strong><br/><span>+20 %</span></div>
+      <div class="stat-box"><strong>PR</strong><br/><span>+8 %</span></div>
+      <div class="goal-box">
+  <div class="goal-title">Mål</div>
+  <button class="goal-plus" onclick="navigateTo('questionnaire.html')">+</button>
+</div>
+
+    </div>
+
+    <!-- Cirkel fremgang -->
+    <div class="glass-box" id="circle-progress">
+      <canvas id="circleChart"></canvas>
+      <div class="circle-text">
+        <div class="big">+0,9 cm</div>
+        <div class="small">Denne måned</div>
+      </div>
+    </div>
+
+    <!-- Søjlediagrammer -->
+    <div class="chart-grid">
+      <div class="chart-box glass-box">
+        <p>kg (uge)</p>
+        <canvas id="kgWeek"></canvas>
+      </div>
+      <div class="chart-box glass-box">
+        <p>cm (uge)</p>
+        <canvas id="cmWeek"></canvas>
+      </div>
+      <div class="chart-box glass-box">
+        <p>kg (måned)</p>
+        <canvas id="kgMonth"></canvas>
+      </div>
+      <div class="chart-box glass-box">
+        <p>cm (måned)</p>
+        <canvas id="cmMonth"></canvas>
+      </div>
+    </div>
+
+
+    <!-- Knap -->
+
+
+  </div>
+  <button class="main-btn">Begynd denne uges</button>
+  <!-- Hamburger ikon -->
+  <div class="menu-icon" id="burgerMenu">
+    <div class="menu-circle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  
+
+<!-- Side menu -->
+<div class="side-menu" id="sideMenu">
+  <ul>
+    <li><a onclick="navigateTo('index.html')">Hjem</a></li>
+    <li><a onclick="navigateTo('maal.html')">Mål</a></li>
+    <li><a href="#">Statistik</a></li>
+    <li><a href="#">Om</a></li>
+    <li><a href="#">Indstillinger</a></li>
+  </ul>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
