@@ -1,0 +1,29 @@
+{
+  "name": "Trng Trkr",
+  "short_name": "Trng Trkr",
+  "description": "Track dine fitness fremskridt",
+  "start_url": "/TrngTrkr/",
+  "scope": "/TrngTrkr/",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/TrngTrkr/trngtrkrlogo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/TrngTrkr/trngtrkrlogo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/TrngTrkr/icons/maskable-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
