@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Kalibrering</title>
+  <link rel="stylesheet" href="styleca.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Kalibrering</h1>
+      <p class="subtitle">Skridttæller kalibrering</p>
+    </div>
+    
+    <div class="card">
+      <div class="instruction">
+        <p>Tryk start, gå 10 skridt som anvist, og tryk stop bagefter.</p>
+      </div>
+      
+      <div class="input-group">
+        <label for="stepType">Skridttype</label>
+        <div class="select-wrapper">
+          <select id="stepType">
+            <option value="normal">Normal gang</option>
+            <option value="long">Lungende skridt</option>
+            <option value="run">Løbende</option>
+          </select>
+          <span class="select-arrow">▼</span>
+        </div>
+      </div>
+      
+      <div class="step-counter">
+        <div class="step-circle">
+          <span id="stepCount">10</span>
+        </div>
+        <p>skridt tilbage</p>
+      </div>
+      
+      <div class="button-group">
+        <button id="startBtn" class="main-btn" data-step-type="normal">Start måling</button>
+        <button id="stopBtn" class="secondary-button" disabled>Stop måling</button>
+      </div>
+      
+      <div id="result" class="result-panel"></div>
+    </div>
+    
+    <div class="status-indicator">
+      <div id="gpsStatus" class="status">
+        <span class="status-dot offline"></span>
+        <span>GPS</span>
+      </div>
+      <div id="accStatus" class="status">
+        <span class="status-dot offline"></span>
+        <span>Accelerometer</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="calibrate.js"></script>
+  <script>
+    function navigateTo(page) {
+      window.location.assign(page);
+    }
+  </script>
+</body>
+</html>

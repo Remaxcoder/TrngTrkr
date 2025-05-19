@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Trng Trkr - Initial Bedømmelse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="questionnaire.css" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <style>
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+    
+    .primary-button, .secondary-button {
+      flex: 1;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      min-height: 54px;
+      touch-action: manipulation;
+    }
+    
+    .primary-button {
+      background: linear-gradient(90deg, #FF7B00, #F4631E);
+      color: #fff;
+    }
+    
+    .secondary-button {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+    
+    .primary-button:hover, .secondary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .primary-button:active, .secondary-button:active {
+      transform: translateY(0);
+    }
+
+    .form-section {
+      margin: 15px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      -webkit-appearance: none;
+      appearance: none;
+      box-sizing: border-box;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: rgba(255, 123, 0, 0.5);
+      box-shadow: 0 0 0 2px rgba(255, 123, 0, 0.2);
+    }
+
+    .progress-container {
+      margin: 15px;
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #FF7B00, #F4631E);
+      transition: width 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .form-section {
+        margin: 10px;
+        padding: 15px;
+      }
+      
+      .form-input {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 14px;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        margin-top: 20px;
+      }
+      
+      .primary-button, .secondary-button {
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        font-size: 15px;
+        margin-bottom: 8px;
+      }
+
+      .page-title {
+        font-size: 20px;
+        margin: 20px 0;
+        padding-top: 60px;
+      }
+    }
+
+    /* Prevent pull-to-refresh on mobile */
+    body {
+      overscroll-behavior-y: none;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+</head>
+<body class="dark">
+  <div class="container">
+    <h1 class="page-title">Initial Fitness Bedømmelse</h1>
+    
+    <!-- Progress indicator -->
+    <div class="progress-container glass-box">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <form id="initialAssessmentForm">
+      <!-- Weight Section -->
+      <div class="form-section glass-box active" id="section1">
+        <h2>Din Vægt</h2>
+        <div class="form-group">
+          <label for="weight">Hvad er din nuværende vægt (kg)?</label>
+          <input type="number" id="weight" step="0.1" class="form-input" min="40" max="200" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Bench Press Section -->
+      <div class="form-section glass-box" id="section2">
+        <h2>Bench Press</h2>
+        <div class="form-group">
+          <label for="benchWeight">Hvad er din nuværende bench press vægt (kg)?</label>
+          <input type="number" id="benchWeight" class="form-input" min="0" max="300" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Curls Section -->
+      <div class="form-section glass-box" id="section3">
+        <h2>Curls</h2>
+        <div class="form-group">
+          <label for="curlsWeight">Hvad er din nuværende curls vægt (kg)?</label>
+          <input type="number" id="curlsWeight" class="form-input" min="0" max="100" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Deadlift Section -->
+      <div class="form-section glass-box" id="section4">
+        <h2>Deadlift</h2>
+        <div class="form-group">
+          <label for="deadliftWeight">Hvad er din nuværende deadlift vægt (kg)?</label>
+          <input type="number" id="deadliftWeight" class="form-input" min="0" max="500" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Pullups Section -->
+      <div class="form-section glass-box" id="section5">
+        <h2>Pullups</h2>
+        <div class="form-group">
+          <label for="pullups">Hvor mange pullups kan du lave?</label>
+          <input type="number" id="pullups" class="form-input" min="0" max="100" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Rows Section -->
+      <div class="form-section glass-box" id="section6">
+        <h2>Rows</h2>
+        <div class="form-group">
+          <label for="rowsWeight">Hvad er din nuværende rows vægt (kg)?</label>
+          <input type="number" id="rowsWeight" class="form-input" min="0" max="200" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Shoulder Press Section -->
+      <div class="form-section glass-box" id="section7">
+        <h2>Shoulder Press</h2>
+        <div class="form-group">
+          <label for="shoulderWeight">Hvad er din nuværende shoulder press vægt (kg)?</label>
+          <input type="number" id="shoulderWeight" class="form-input" min="0" max="200" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="button" class="primary-button next-section">Næste</button>
+        </div>
+      </div>
+
+      <!-- Squat Section -->
+      <div class="form-section glass-box" id="section8">
+        <h2>Squat</h2>
+        <div class="form-group">
+          <label for="squatWeight">Hvad er din nuværende squat vægt (kg)?</label>
+          <input type="number" id="squatWeight" class="form-input" min="0" max="400" required>
+        </div>
+        <div class="button-group">
+          <button type="button" class="secondary-button prev-section">Tilbage</button>
+          <button type="submit" class="primary-button submit-btn">Gem Profil</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Menu Icon -->
+  <div class="menu-icon" id="menuIcon">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  
+  <!-- Side Menu -->
+  <div class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <div class="profile-avatar"></div>
+      <div class="profile-name">Trænings Profil</div>
+    </div>
+    <div class="menu-separator"></div>
+    <nav class="menu-nav">
+      <ul>
+        <li><a onclick="navigateTo('index.html')"><span class="icon">🏠</span>Hjem</a></li>
+        <li><a onclick="navigateTo('maal.html')"><span class="icon">🎯</span>Mål</a></li>
+        <li><a href="#"><span class="icon">📊</span>Statistik</a></li>
+        <li><a href="#"><span class="icon">ℹ️</span>Om</a></li>
+        <li><a href="#"><span class="icon">⚙️</span>Indstillinger</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="menu.js"></script>
+  <script src="initial-assessment.js"></script>
+  <script>
+    function navigateTo(page) {
+      window.location.assign(page);
+    }
+  </script>
+</body>
+</html> 
